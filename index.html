@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+
+    <style>
+
+        body {
+            background-image: url(https://10619-2.s.cdn12.com/rests/original/104_506556801.jpg);
+            background-size: cover;
+        }
+
+
+        .painel {
+            background-color: rgba(0, 0, 0, 0.774);
+            color: white;
+            margin: auto;
+            width: 500px;
+            height: 500px;
+            border-radius: 20px;
+            text-align: center;
+            padding-top: 50px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        #sim {
+            
+            height: 40px;
+            width: 60px;
+            background-color: red;
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            margin-left: -60px;
+        }
+
+
+        #nao {
+            position: absolute;
+            height: 40px;
+            width: 60px;
+            background-color: red;
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .painel h1 {
+            margin-top: 80px;
+            margin-bottom: 90px;
+            font-size: 30px;
+        }
+
+        .painel h5 {
+            font-size: 20px;
+            margin-bottom: 80x;
+            padding-bottom: 80px;
+        }
+
+        .painel button {
+            cursor: pointer;
+        }
+
+        
+    </style>
+
+</head>
+<body>
+    
+    <div class="painel">
+        <h1>Essa é uma grande decisão!</h1>
+
+        <h5>Bora tomar uma cervejinha e comer um espetinho?</h5>
+
+        <a href="https://www.youtube.com/watch?v=oXy3UulzmW0" target="_blank"><button id="sim">Sim! </button></a>
+        <button onmouseover="fuja()" onclick="fuja()" id="nao">Não!</button>
+
+     
+    </div>
+
+    <script>
+
+        function fuja() {
+            var botaoNao = document.getElementById("nao")
+
+            var larguraJanela = window.innerWidth;
+            var alturajanela = window.innerHeight;
+
+            var maxX = larguraJanela - botaoNao.offsetWidth;
+            var maxY = alturajanela - botaoNao.offsetHeight;
+
+            var aleatorioX = Math.floor(Math.random() * maxX);
+            var aleatorioY = Math.floor(Math.random() * maxY);
+
+            botaoNao.style.left = aleatorioX + "px";
+            botaoNao.style.top = aleatorioY + "px";
+
+        }
+
+        function parabens() {
+            alert("Parabéns, você fez uma sabia escolha :D")
+        }
+
+    </script>
+
+</body>
+</html>
